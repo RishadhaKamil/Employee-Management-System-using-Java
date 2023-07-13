@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="3d368a66-203b-411d-818e-88e0b6f81b5f">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString language="SQL">
+		<![CDATA[select * from tblLeave;]]>
+	</queryString>
+	<field name="leaveid" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="empid" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="leavefrom" class="java.sql.Date">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="leaveto" class="java.sql.Date">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="reason" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="approval" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="101" splitType="Stretch">
+			<staticText>
+				<reportElement x="100" y="11" width="388" height="43" uuid="b061d90f-64ff-4b2d-83dd-c1dec3287b86"/>
+				<textElement>
+					<font fontName="Segoe Script" size="24" isBold="true" isItalic="false" isUnderline="false"/>
+				</textElement>
+				<text><![CDATA[View Your Leave Approval]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="100" height="20" uuid="efa8b328-515f-41b5-ab8d-a17675779003"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Page Number]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="349" y="0" width="100" height="20" uuid="a303ac3c-b63b-4ff6-9955-56607d9e07f6"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Date]]></text>
+			</staticText>
+			<textField pattern="yyyy/MM/dd">
+				<reportElement x="455" y="0" width="100" height="20" uuid="d5e36bc9-093e-4409-afe5-2255a1ed35e9"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="100" y="0" width="80" height="20" uuid="918d9e26-409e-4971-9597-a4b72c1e64a2"/>
+				<textElement textAlignment="Right">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement x="180" y="0" width="57" height="20" uuid="38776a39-0788-461d-8170-213ddd3badea"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="32" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="2" width="65" height="20" uuid="f31faebd-b1ed-4a32-b352-4f877f4f278c"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[LeaveId]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="78" y="2" width="87" height="20" uuid="9f4b9ec9-f7bb-4347-8629-71586a345425"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[LeaveFrom]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="194" y="0" width="100" height="20" uuid="0c9e1144-9f68-45e0-88cc-22960c373ca6"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[LeaveTo]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="313" y="2" width="142" height="20" uuid="e808d475-320d-437b-aaca-3c6cba3c390d"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Reason]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="465" y="2" width="100" height="20" uuid="759078ca-d2db-4216-961b-a1f615f496c0"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Approval]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="31" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="65" height="20" uuid="0042bada-147e-4066-b305-054ce37f161d"/>
+				<textFieldExpression><![CDATA[$F{leaveid}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="78" y="0" width="100" height="20" uuid="9f518e2f-1a52-467a-ab13-ef8119c79702"/>
+				<textFieldExpression><![CDATA[$F{leavefrom}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="194" y="0" width="100" height="20" uuid="88085240-7963-485b-a849-db8e32bfcdb1"/>
+				<textFieldExpression><![CDATA[$F{leaveto}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="313" y="0" width="142" height="20" uuid="cc30dcb5-ba85-4e6a-a61c-4dce941af2b8"/>
+				<textFieldExpression><![CDATA[$F{reason}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="465" y="0" width="100" height="20" uuid="8dac42ea-a6c9-4170-8b8f-d5d2c1cd0e13"/>
+				<textFieldExpression><![CDATA[$F{approval}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="2" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="4" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="1" splitType="Stretch"/>
+	</summary>
+</jasperReport>

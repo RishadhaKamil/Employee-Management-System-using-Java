@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="a2b4bd71-8e96-4963-97c4-6155e44f0b05">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT * from tblComplaint;]]>
+	</queryString>
+	<field name="Cid" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="empid" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="email" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="complaint" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="108" splitType="Stretch">
+			<staticText>
+				<reportElement x="127" y="13" width="309" height="48" uuid="af27034b-2842-4ff7-9dde-95967bb2e6d9"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Segoe Script" size="24" isBold="true" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[ Report of Complaints]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="43" splitType="Stretch">
+			<textField pattern="yyyy/MM/dd">
+				<reportElement x="436" y="0" width="100" height="20" uuid="73a4231d-d021-496b-a871-be6e370a91be"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="109" y="0" width="137" height="20" uuid="e17da1b3-a308-4798-840d-99b486ed4d74"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="336" y="0" width="100" height="20" uuid="569ced9b-bad5-4f9c-a9e1-145147069276"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[Date]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="9" y="0" width="100" height="20" uuid="2a89c4ae-5039-4bfc-8b38-a9b07c319cb5"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[Page number]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="26" splitType="Stretch">
+			<staticText>
+				<reportElement x="9" y="2" width="100" height="20" uuid="1f70e6e4-95c0-43a4-9188-fdcf2a9a7fe4"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Complaint ID]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="146" y="2" width="100" height="20" uuid="85d6b702-e380-4121-8549-74ad8d9fc646"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Employee ID]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="273" y="0" width="100" height="20" uuid="b3985a8a-c2db-4d90-9e18-473a9ff4ca93"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Email]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="406" y="2" width="100" height="20" uuid="3ef305ce-284d-4bed-8884-8b73e32aa294"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Complaint]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="40" splitType="Stretch">
+			<textField>
+				<reportElement x="9" y="12" width="100" height="20" uuid="8b87899a-f48e-4c66-94fb-aea9f9383e16"/>
+				<textFieldExpression><![CDATA[$F{Cid}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="146" y="12" width="100" height="20" uuid="d11f0d62-1e44-4502-bce5-1e417d7a91ed"/>
+				<textFieldExpression><![CDATA[$F{empid}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="273" y="12" width="100" height="20" uuid="7deacb6f-fc33-4a4c-aaf9-c3453a84146e"/>
+				<textFieldExpression><![CDATA[$F{email}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="406" y="12" width="129" height="20" uuid="72266166-ffcd-4ab4-947a-84d69aee8008"/>
+				<textFieldExpression><![CDATA[$F{complaint}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="3" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="6" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="3" splitType="Stretch"/>
+	</summary>
+</jasperReport>

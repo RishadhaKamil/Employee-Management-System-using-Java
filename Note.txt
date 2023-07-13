@@ -1,0 +1,15 @@
+***--------------Admin Credentials------------*****
+  Email- admin@123
+  Password - 123
+
+.............................................
+
+*****---------Employee Credentials-------******
+
+ You can register yourself by signup 
+and then login as user and give acess to the new user  
+by selecting the relevant user's row  in table under employee details option
+
+And login again once admin approves the new user
+
+..................................... 
